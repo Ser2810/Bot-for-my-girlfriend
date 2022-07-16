@@ -14,7 +14,7 @@ r"CAACAgIAAxkBAAEFS3Ji0uYqLoE9-wAB9CbNe3eWarU-VzQAAnwRAAL2x6hLkbePhpbcIpYpBA"]
 
 PHRASE_LIST_1 = ["Я тебя тоже", "А я своего котика сильнее лбюлю", "Люблю люблю люблю люблю люблю люблю люблю люблю люблю люблю люблю люблю люблю", "хехеххе, все равно я тебя сильнее люблю", "Я тебя тоже, котик", "лю", "Лю", "Я тебя так сильно люблю", "я тебя так сильно люблю"]
 
-BOT_TOKEN = "5521938306:AAF2jC6KuvCYOS-BUMx15Uq5TC53-rVZRsk"
+BOT_TOKEN = "your TOKEN"
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot)
 logging.basicConfig(level=logging.INFO)
@@ -26,13 +26,13 @@ async def get_started(message: types.Message):
 
 @dp.message_handler()
 async def cath_message(message: types.Message):
-    if (message.text in POSSIBLE_MESSAGES_1 or "люблю тебя" in message.text or "тебя люблю" in message.text) and message.from_id != 934927370:
+    if (message.text in POSSIBLE_MESSAGES_1 or "люблю тебя" in message.text or "тебя люблю" in message.text) and message.from_id != your id:
         await message.answer(random.choice(PHRASE_LIST_1))
         await message.answer_sticker(random.choice(STICKER_ID))
-    elif ("болит" in message.text or "Болит" in message.text or "Ударилась" in message.text or "ударилась" in message.text or "Больно" in message.text or "больно" in message.text or "Разбила" in message.text or "разбила" in message.text) and message.from_id != 934927370:
+    elif ("болит" in message.text or "Болит" in message.text or "Ударилась" in message.text or "ударилась" in message.text or "Больно" in message.text or "больно" in message.text or "Разбила" in message.text or "разбила" in message.text) and message.from_id != your id:
         await message.answer("Ууммм моему котику больно, дай поцелую!")
         await message.answer_sticker(r"CAACAgIAAxkBAAEFS15i0uC5hiP0yFSQCUE1qkqzy-lo4gACnxUAAl1ZyEtEDa1wW6NsuSkE") 
-    elif message.from_id != 934927370:
+    elif message.from_id != your id:
         await message.answer("Извини, любимая, я не рассчитал, что ты можешь так сказать. Люблю тебя!")
 
 if __name__ == "__main__":
